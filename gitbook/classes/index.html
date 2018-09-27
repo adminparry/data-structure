@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [6,3,4,8,2,5,1,7,9];
+	var result;
+
+	function selectionSort(many){
+
+		var arr = many.slice(),
+		len = arr.length,minIndex,temp;
+
+		for (var i = 0; i < len - 1; i++) {
+			minIndex = i;
+			for (var j = i + 1; j < len ; j++) {
+			
+				if(arr[j] < arr[minIndex])minIndex = j;
+			};
+
+
+			var tmp = arr[i];
+			arr[i] = arr[minIndex];
+			arr[minIndex] = tmp;
+		};
+		
+		return arr;
+	}
+	result = selectionSort(arr);
+	console.log(result,arr);
+</script>
+</html>
